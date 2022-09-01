@@ -1,17 +1,16 @@
-package io.clanga.rngservice.rng;
+package io.clanga.rngservice;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import io.clanga.gamesshared.rng.RngResponse;
-import io.clanga.gamesshared.rng.RngRequest;
+import io.clanga.gamesshared.rng.RandomDraw;
 
 @Service
 public class RngService {
     @Autowired
     private RngRepository rngRepository;
 
-    public RngResponse getDraws(final RngRequest request) {
+    public Integer getDraws(final RandomDraw request) {
         return rngRepository.getDraws(request);
     }
 }
